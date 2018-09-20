@@ -81,3 +81,23 @@ tr -d "\n" < r.txt| rev  | tr ATCG TAGC
 ```
 使用bash写出来的语句看着非常简短优雅,所以linux shell中的常用函数还是要熟练掌握啊.
 
+### Counting Point Mutations
+1.R
+```
+string_a <- read.csv("xxx.txt")
+string_b <- read.csv("xxx.txt")
+string_vector_a <- strsplit(string_a[1],"")
+string_vector_b <- strsplit(string_b[1],"")
+
+string_vector_a <- as.vector(string_vector_a[[1]])
+string_vector_b <- as.vector(string_vector_b[[1]])
+
+sum = 0
+i = 1
+while (i <= length(string_vector_a)){
+  if (string_vector_a[i] != string_vector_b[i]){
+    sum = sum +1
+  }
+  i = i + 1
+}
+sum
