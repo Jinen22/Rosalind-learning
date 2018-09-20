@@ -76,6 +76,8 @@ print(reverse(seq))
 rev /path/to/file | sed 'y/ATCG/TAGC/'
 #或者直接使用tr函数
 rev r.txt | tr ATCG TAGC
+# for multi lines
+tr -d "\n" < r.txt| rev  | tr ATCG TAGC
 ```
 使用bash写出来的语句看着非常简短优雅,所以linux shell中的常用函数还是要熟练掌握啊.
 
