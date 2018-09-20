@@ -84,10 +84,10 @@ tr -d "\n" < r.txt| rev  | tr ATCG TAGC
 ### Counting Point Mutations
 1.R
 ```
-string_a <- read.csv("xxx.txt")
-string_b <- read.csv("xxx.txt")
-string_vector_a <- strsplit(string_a[1],"")
-string_vector_b <- strsplit(string_b[1],"")
+string <- read.csv("rosalind_hamm.txt",header = F)
+
+string_vector_a <- strsplit(as.vector(string[1,]),"")
+string_vector_b <- strsplit(as.vector(string[2,]),"")
 
 string_vector_a <- as.vector(string_vector_a[[1]])
 string_vector_b <- as.vector(string_vector_b[[1]])
@@ -101,3 +101,12 @@ while (i <= length(string_vector_a)){
   i = i + 1
 }
 sum
+```
+2.python
+```
+cnt = 0
+for i in range(len(a)):
+    if a[i] != b[i]: cnt+=1
+print cnt
+#这里使用python可以直接访问字符串,比R中更方便一些
+```
