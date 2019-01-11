@@ -81,7 +81,7 @@ tr -d "\n" < r.txt| rev  | tr ATCG TAGC
 ```
 使用bash写出来的语句看着非常简短优雅,所以linux shell中的常用函数还是要熟练掌握啊.
 
-### Counting Point Mutations
+### 4 Counting Point Mutations
 1.R
 ```
 string <- read.csv("rosalind_hamm.txt",header = F)
@@ -109,4 +109,21 @@ for i in range(len(a)):
     if a[i] != b[i]: cnt+=1
 print cnt
 #这里使用python可以直接访问字符串,比R中更方便一些
+```
+### 5 Rabbits and Recurrence Relations
+1. Solution in R
+```
+#题目说明里已经介绍的非常清楚了，考察函数的递归。具体使用时把k换成具体给定的数据就可以了。
+fibo <- function(n) {
+  if(n == 1 | n == 2) {
+    return(1)
+  }
+  else {
+    return(fibo(n-1) + k * fibo(n-2))
+  }
+}
+```
+然后根据给定的n和k值，进行计算。
+```
+fibo(n)
 ```
