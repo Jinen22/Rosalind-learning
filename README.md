@@ -67,9 +67,7 @@ def reverse(seq):
     return revComSeq
 
 print(reverse(seq))
-#作者：thinkando
 #链接：https://www.jianshu.com/p/339973874490
-#來源：简书
 ```
 2.bash(以前一直没有发现sed和awk竟然有如此丰富的应用)
 ```
